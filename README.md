@@ -9,6 +9,26 @@ Nutzen Sie für die Umsetzung xampp. Xampp stellt Ihnen ohne große Installation
 https://www.apachefriends.org/de/index.html
 
 1. Legen Sie in einer MariaDB folgende Tabellen an:
+   1. user_table  
+– `Id` -> Primary Key und Auto Increment  
+– `Name` -> Not Null
+
+   2. survey_table
+– `Id` -> Primary Key und Auto Increment  
+– `UserId` (Fremdschlüssel auf die id eines Users in der user_table) -> Not Null  
+– `Datum` (soll ein Datum nach dem Schema y-d-m speichern) -> Not Null  
+– `Q1`(Speichert eine Antwort) -> Not Null  
+– `Q2` (Speichert eine Antwort) -> Not Null  
+– `Q3` (Speichert eine Antwort) -> Not Null  
+– `Q4` (Speichert eine Antwort) -> Not Null  
+– `Q5` (Speichert eine Antwort) -> Not Null   
+
+   3. Füllen Sie die Tabelle `user` mit folgenden drei Datensätzen via SQL-Statement:  
+– 1 Datensatz -> anonymous  
+– 2 Datensatz -> Lara  
+– 3 Datensatz -> Luisa
+
+   Speichern Sie alle SQL Statements aus Aufgabe 1 i-iii in einer Datei db.sql. 
 
 2. In dieser Aufgabe soll eine Projektstruktur und der Zugang zur Datenbank eingerichtet werden.
 Erstellen Sie einen Ordner `survey` und in diesem Ordner einen Ordner `inc`. In den `inc` Ordner ist eine Datei `db.php` anzulegen. Diese Datei implementiert die Datenbankverbindungsinformationen und wird über `require(‘db.php’)` den folgenden zu erarbeiteten Daten zur Verfügung gestellt. Informationen zur Funktion `require()` finden Sie unter:
